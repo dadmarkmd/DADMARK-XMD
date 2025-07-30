@@ -12,7 +12,6 @@ cmd({
 },
 async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
     try {
-        // Generate system status message
         const status = `╭━━〔 *✦DADMARK-XMD✦* 〕━━┈⊷
 ┃🦄╭─────────────·๏
 ┃🦄┃• *⏳Uptime*:  ${runtime(process.uptime())} 
@@ -24,7 +23,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 ╰──────────────┈⊷
 > © ✦ DADMARK✦ XMD ✦`;
 
-        // Send the status message with an image
+        // 1. Send image + alive message
         await conn.sendMessage(from, { 
             image: { url: `https://i.ibb.co/FLjRKTNK/lordcasey.jpg` },  
             caption: status,
@@ -38,6 +37,13 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                     serverMessageId: 143
                 }
             }
+        }, { quoted: mek });
+
+        // 2. Send voice note (PTT)
+        await conn.sendMessage(from, {
+            audio: { url: 'https://files.catbox.moe/x9t8vj.mp3' },
+            mimetype: 'audio/mpeg',
+            ptt: true // ✅ This makes it a voice note
         }, { quoted: mek });
 
     } catch (e) {
