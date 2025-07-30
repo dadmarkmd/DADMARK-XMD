@@ -1,58 +1,64 @@
 <p align="center">
   <img src="https://files.catbox.moe/w4cxbd.jpg" alt="DADMARK Banner" width="800"/>
-</p>
-
-<p align="center">
+</p><p align="center">
   <a href="https://github.com/dadmarkmd/DADMARK-XMD">
     <img src="https://svg.demolab.com?font=Black+Ops+One&size=50&pause=1000&color=DAA520&center=true&width=910&height=100&lines=DADMARK XMD +MAKE; ⭐ STAR & FORK + BY DADMARK XMD" alt="Typing SVG" />
   </a>
-</p>
-
-<p align="center">
+</p><p align="center">
   <a href="https://dadmark-xmd-v1-z9s7.onrender.com/">
     <img src="https://img.shields.io/badge/LIVE_SESSION-RUNNING-blueviolet?style=for-the-badge&logo=render" alt="Live Session Badge" />
   </a>
 </p>
+---
+
+🚀 DADMARK XMD - WhatsApp Multi-Device Bot
+
+DADMARK XMD is a powerful multi-device WhatsApp bot built to automate tasks, deliver features, and engage in real-time communication using the WhatsApp Web API.
+
+> 🔗 Live Session
+📦 GitHub Repo: DADMARK-XMD
+
+
+
 
 ---
 
-## 🚀 DADMARK XMD - WhatsApp Multi-Device Bot
+📲 Join Our WhatsApp Channel
 
-**DADMARK XMD** is a powerful multi-device WhatsApp bot built to automate tasks, deliver features, and engage in real-time communication using the WhatsApp Web API.
-
-> 🔗 [Live Session](https://dadmark-xmd-v1-z9s7.onrender.com/)  
-> 📦 GitHub Repo: [DADMARK-XMD](https://github.com/dadmarkmd/DADMARK-XMD)
-
----
-
-## ✨ Features
-
-- ✅ Multi-device WhatsApp support  
-- ✅ QR Code login system  
-- ✅ Customizable bot commands  
-- ✅ Media handling (images, videos, stickers)  
-- ✅ Admin-only features  
-- ✅ Group and private chat support  
-- ✅ Easy to deploy on platforms like **Render**, **Heroku**, or **VPS**  
-- ✅ Docker support
-
----
-
-## 📲 Join Our WhatsApp Channel
-
-<p>
+<p align="center">
   <a href="https://whatsapp.com/channel/0029Vb5Ydyb3LdQdiihg9A19">
-    <img title="OUR WHATSAPP CHANNEL" src="https://img.shields.io/badge/OUR--WHATSAPP--CHANNEL-Join--Now-green?style=for-the-badge&logo=whatsapp" width="280" height="38.45"/>
+    <img title="Join Our WhatsApp Channel" src="https://img.shields.io/badge/Join_WhatsApp_Channel-Click_Here-green?style=for-the-badge&logo=whatsapp" />
   </a>
 </p>
+---
+
+<details>
+  <summary>✨ Click to View Full Features & Installation Guide</summary>✨ Features
+
+✅ Multi-device WhatsApp support
+
+✅ QR Code login system
+
+✅ Customizable bot commands
+
+✅ Media handling (images, videos, stickers)
+
+✅ Admin-only features
+
+✅ Group and private chat support
+
+✅ Easy to deploy on platforms like Render, Heroku, or VPS
+
+✅ Docker support
+
+
 
 ---
 
-## ⚙️ Installation
+⚙️ Installation
 
 To set up DADMARK XMD locally:
 
-```bash
 # Clone the repository
 git clone https://github.com/dadmarkmd/DADMARK-XMD.git
 
@@ -76,7 +82,7 @@ docker build -t dadmark-xmd .
 docker run -it dadmark-xmd
 
 Docker Support Maintained by:
-dadmark — 📞 +254714342128
+📞 dadmark — +254714342128
 
 
 ---
@@ -104,5 +110,4 @@ This project is licensed under the MIT License.
 
 Built and maintained by Dadmark XMD — contributions, stars, and forks are welcome!
 
-
----
+</details>
