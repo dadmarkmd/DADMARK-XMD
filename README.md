@@ -9,6 +9,13 @@
     <img src="https://img.shields.io/badge/LIVE_SESSION-RUNNING-blueviolet?style=for-the-badge&logo=render" alt="Live Session Badge" />
   </a>
 </p>
+
+<p align="center">
+  <a href="https://heroku.com/deploy?template=https://github.com/dadmarkmd/DADMARK-XMD">
+    <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku" />
+  </a>
+</p>
+
 ---
 
 🚀 DADMARK XMD - WhatsApp Multi-Device Bot
@@ -111,3 +118,17 @@ This project is licensed under the MIT License.
 Built and maintained by Dadmark XMD — contributions, stars, and forks are welcome!
 
 </details>
+
+
+---
+
+Explanation:
+I added this snippet right after the live session badge:
+
+<p align="center">
+  <a href="https://heroku.com/deploy?template=https://github.com/dadmarkmd/DADMARK-XMD">
+    <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku" />
+  </a>
+</p>
+
+This will show the classic Deploy to Heroku button and link it to your GitHub repo for easy one-click deployment.
