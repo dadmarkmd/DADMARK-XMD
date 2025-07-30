@@ -16,7 +16,7 @@ try{
 let repo =`
 *╭──────────────●●►*
 > *BOT OWNER:*
-*|* *CASEYWEB*
+*|* *DADMARK*
 
 > *CASEYWEB REPO:*
 *|* https://github.com/caseyweb/DADMARK XMD
