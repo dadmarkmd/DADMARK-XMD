@@ -1,4 +1,4 @@
-p align="center">
+<p align="center">
   <img src="https://files.catbox.moe/w4cxbd.jpg" alt="DADMARK Banner" width="800"/>
 </p>
 
@@ -52,6 +52,13 @@ p align="center">
 <p align="center">
   <a href="https://wa.me/254714342128">
     <img src="https://img.shields.io/badge/CONTACT_DADMARK-ON_WHATSAPP-25D366?style=for-the-badge&logo=whatsapp" alt="Contact Dadmark on WhatsApp" />
+  </a>
+</p>
+
+<!-- 5. ZIP Download -->
+<p align="center">
+  <a href="https://github.com/dadmarkmd/DADMARK-XMD/archive/refs/heads/main.zip">
+    <img src="https://img.shields.io/badge/DOWNLOAD-DADMARK_XMD.ZIP-brightgreen?style=for-the-badge&logo=github" alt="Download ZIP" />
   </a>
 </p>
 
@@ -152,4 +159,5 @@ This project is licensed under the MIT License.
 🧠 Credits
 
 Built and maintained by Dadmark XMD — contributions, stars, and forks are welcome!
+
 </details>
