@@ -3,7 +3,7 @@ const config = require('../config');
 
 cmd({
     pattern: "owner",
-    react: "🦋", 
+    react: "🦋",
     desc: "Get owner number",
     category: "main",
     filename: __filename
@@ -18,6 +18,7 @@ async (conn, mek, m, { from }) => {
             return m.reply("Owner details are not configured properly.");
         }
 
+        // Send vCard contact
         const vcard = 'BEGIN:VCARD\n' +
                       'VERSION:3.0\n' +
                       `FN:${ownerName}\n` +
@@ -31,6 +32,7 @@ async (conn, mek, m, { from }) => {
             }
         });
 
+        // Send image with caption
         await conn.sendMessage(from, {
             image: { url: 'https://i.imgur.com/KADOfEq.jpeg' },
             caption: `╭━━〔 *DADMARK 𝐓𝐄𝐂𝐇* 〕━━┈⊷
@@ -54,8 +56,9 @@ async (conn, mek, m, { from }) => {
             }
         }, { quoted: mek });
 
+        // Send new audio/voice message (PTT)
         await conn.sendMessage(from, {
-            audio: { url: 'https://files.catbox.moe/u66h53.mp3' },
+            audio: { url: 'https://files.catbox.moe/qnkeip.mp3' },
             mimetype: 'audio/ogg; codecs=opus',
             ptt: true
         }, { quoted: mek });
