@@ -1,4 +1,4 @@
-const { cmd, commands } = require("../command");
+const { cmd } = require("../command");
 const axios = require("axios");
 
 cmd({
@@ -7,7 +7,7 @@ cmd({
     react: "🔍",
     desc: "Search and download Pinterest images using the API.",
     category: "fun",
-    use: ".pin <keywords>",
+    use: ".img <keywords> | .pinterest <keywords>",
     filename: __filename
 }, async (conn, mek, m, { reply, args, from }) => {
     try {
@@ -16,35 +16,46 @@ cmd({
             return reply("*❗ Please provide a search query.*");
         }
 
-        // Notify user that the request is being processed
-        await reply(`*🔎 Searching and downloading images for:* ${query}...`);
+        await reply(`*🔎 Searching Pinterest for:* _${query}_ ...`);
 
         const apiUrl = `https://api.diioffc.web.id/api/search/pinterest?query=${encodeURIComponent(query)}`;
         const response = await axios.get(apiUrl);
 
-        // Validate the response and ensure results exist
-        if (!response.data || !response.data.result || response.data.result.length === 0) {
-            return reply("*⚠️ No results found. Please try using different keywords.*");
+        if (
+            !response.data ||
+            !Array.isArray(response.data.result) ||
+            response.data.result.length === 0
+        ) {
+            return reply("*⚠️ No results found. Try different keywords.*");
         }
 
         const results = response.data.result;
 
-        // Randomly select up to 5 images from the results
-        const selectedImages = results.sort(() => 0.5 - Math.random()).slice(0, 5);
+        // Randomly select up to 5 unique images
+        const selectedImages = [];
+        const maxImages = Math.min(5, results.length);
+        const usedIndexes = new Set();
 
-        // Send each selected image to the user
-        for (const image of selectedImages) {
+        while (selectedImages.length < maxImages) {
+            const i = Math.floor(Math.random() * results.length);
+            if (!usedIndexes.has(i) && results[i]?.src) {
+                selectedImages.push(results[i].src);
+                usedIndexes.add(i);
+            }
+        }
+
+        for (const imgUrl of selectedImages) {
             await conn.sendMessage(
                 from,
                 {
-                    image: { url: image.src },
-                    caption: `*🔎 Results for:* ${query}\n\n> *Powered by DADMARK-𝕏𝕄𝔻 ✨*`
+                    image: { url: imgUrl },
+                    caption: `*🔍 Search results for:* _${query}_\n\n> *Powered by DADMARK-𝕏𝕄𝔻 ✨*`
                 },
                 { quoted: mek }
             );
         }
     } catch (error) {
-        console.error(error);
-        reply("*❌ An error occurred while processing your request. Please try again later.*");
+        console.error("Pinterest Search Error:", error?.response?.data || error.message);
+        reply("*❌ An error occurred while fetching images. Please try again later.*");
     }
 });
