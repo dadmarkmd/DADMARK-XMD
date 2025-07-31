@@ -399,6 +399,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 ┋ ☻ *autorecording*
 ┋ ☻ *autotyping*
 ┋ ☻ *setbotnumber*
+┋ ☻ *anticall*
 ┋ ☻ *autovoice*
 ┋ ☻ *autosticker*
 ┋ ☻ *autoreply*
