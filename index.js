@@ -525,11 +525,12 @@ console.log("Session downloaded ✅")
   //=====================================================
          
   //================ownerreact==============
-  
-  if(senderNumber.includes("254714342128")){
-  if(isReact) return
-  m.react("💕")
-  }
+    
+      if (senderNumber.includes("254714342128") && !isReact) {
+        const reactions = ["👑", "🥳", "📊", "⚙️", "🧠", "🎯", "✨", "🔑", "🏆", "👻", "🎉", "💗", "❤️", "😜", "🌼", "🏵️", ,"💐", "🔥", "❄️", "🌝", "🌟", "🐥", "🧊"]
+        const randomReaction = reactions[Math.floor(Math.random() * reactions.length)]
+        m.react(randomReaction)
+      }
   
   //==========public react============//
   // Auto React 
