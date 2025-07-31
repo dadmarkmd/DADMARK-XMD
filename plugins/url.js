@@ -8,7 +8,7 @@ const { cmd, commands } = require("../command");
 cmd({
   'pattern': "tourl",
   'alias': ["imgtourl", "imgurl", "url", "geturl", "upload"],
-  'react': '馃枃',
+  'react': '✅',
   'desc': "Convert media to Catbox URL",
   'category': "utility",
   'use': ".tourl [reply to media]",
@@ -62,10 +62,10 @@ cmd({
 
     // Send response
     await reply(
-      `*${mediaType} Uploaded Successfully*\n\n` +
+      `*${mediaType} ᴜᴘʟᴏᴀᴅᴇᴅ sᴜᴄᴄᴇsғᴜʟʟʏ ✅*\n\n` +
       `*Size:* ${formatBytes(mediaBuffer.length)}\n` +
       `*URL:* ${mediaUrl}\n\n` +
-      `> Uploaded by dadmark XMD👻`
+      `> ᴜᴘʟᴏᴀᴅᴇᴅ ʙʏ ᴅᴀᴅᴍᴀʀᴋ ʙᴏᴛ 🌐`
     );
 
   } catch (error) {
@@ -81,4 +81,4 @@ function formatBytes(bytes) {
   const sizes = ['Bytes', 'KB', 'MB', 'GB'];
   const i = Math.floor(Math.log(bytes) / Math.log(k));
   return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
-      }
+  }
