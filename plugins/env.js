@@ -1,57 +1,31 @@
-const config = require('../config');
-const { cmd } = require('../command');
+// env.js
+require('dotenv').config(); // Load .env
 
-function isEnabled(value) {
-  return value && value.toString().toLowerCase() === "true";
+// Helper to safely fetch boolean envs
+function getEnv(name, defaultValue = "false") {
+  return (process.env[name] || defaultValue).toString().toLowerCase();
 }
 
-cmd({
-  pattern: "env",
-  alias: ["setting", "allvar"],
-  desc: "Display current bot environment settings",
-  category: "menu",
-  react: "⚙️",
-  filename: __filename
-}, async (conn, mek, m, { from, quoted, reply }) => {
-  try {
-    let envSettings = `╭─❖ *『 DADMARK XMD BOT ENV 』* ❖─
-┃
-┃ ⚙️ *Environment Settings Status*
-┃
-┃ • Auto Read Status: ${isEnabled(config.AUTO_STATUS_SEEN) ? "✅ Enabled" : "❌ Disabled"}
-┃ • Auto Reply Status: ${isEnabled(config.AUTO_STATUS_REPLY) ? "✅ Enabled" : "❌ Disabled"}
-┃ • Auto Reply: ${isEnabled(config.AUTO_REPLY) ? "✅ Enabled" : "❌ Disabled"}
-┃ • Auto Sticker: ${isEnabled(config.AUTO_STICKER) ? "✅ Enabled" : "❌ Disabled"}
-┃ • Auto Voice: ${isEnabled(config.AUTO_VOICE) ? "✅ Enabled" : "❌ Disabled"}
-┃ • Owner React: ${isEnabled(config.OWNER_REACT) ? "✅ Enabled" : "❌ Disabled"}
-┃ • Custom Reacts: ${isEnabled(config.CUSTOM_REACT) ? "✅ Enabled" : "❌ Disabled"}
-┃ • Auto React: ${isEnabled(config.AUTO_REACT) ? "✅ Enabled" : "❌ Disabled"}
-┃ • Delete Links: ${isEnabled(config.DELETE_LINKS) ? "✅ Enabled" : "❌ Disabled"}
-┃ • Anti-Link: ${isEnabled(config.ANTI_LINK) ? "✅ Enabled" : "❌ Disabled"}
-┃ • Anti-Bad Words: ${isEnabled(config.ANTI_BAD) ? "✅ Enabled" : "❌ Disabled"}
-┃ • Auto Typing: ${isEnabled(config.AUTO_TYPING) ? "✅ Enabled" : "❌ Disabled"}
-┃ • Auto Recording: ${isEnabled(config.AUTO_RECORDING) ? "✅ Enabled" : "❌ Disabled"}
-┃ • Always Online: ${isEnabled(config.ALWAYS_ONLINE) ? "✅ Enabled" : "❌ Disabled"}
-┃ • Public Mode: ${isEnabled(config.PUBLIC_MODE) ? "✅ Enabled" : "❌ Disabled"}
-┃ • Read Message: ${isEnabled(config.READ_MESSAGE) ? "✅ Enabled" : "❌ Disabled"}
-┃
-╰─❖ *${config.DESCRIPTION}*`;
+function getConfig() {
+  return {
+    AUTO_STATUS_SEEN: getEnv("AUTO_STATUS_SEEN", "true"),
+    AUTO_STATUS_REPLY: getEnv("AUTO_STATUS_REPLY", "false"),
+    AUTO_REPLY: getEnv("AUTO_REPLY", "false"),
+    AUTO_STICKER: getEnv("AUTO_STICKER", "false"),
+    AUTO_VOICE: getEnv("AUTO_VOICE", "true"),
+    OWNER_REACT: getEnv("OWNER_REACT", "false"),
+    CUSTOM_REACT: getEnv("CUSTOM_REACT", "false"),
+    AUTO_REACT: getEnv("AUTO_REACT", "false"),
+    DELETE_LINKS: getEnv("DELETE_LINKS", "true"),
+    ANTI_LINK: getEnv("ANTI_LINK", "true"),
+    ANTI_BAD: getEnv("ANTI_BAD", "false"),
+    AUTO_TYPING: getEnv("AUTO_TYPING", "true"),
+    AUTO_RECORDING: getEnv("AUTO_RECORDING", "false"),
+    ALWAYS_ONLINE: getEnv("ALWAYS_ONLINE", "true"),
+    PUBLIC_MODE: getEnv("PUBLIC_MODE", "true"),
+    READ_MESSAGE: getEnv("READ_MESSAGE", "false"),
+    DESCRIPTION: process.env.DESCRIPTION || "DADMARK XMD BOT",
+  };
+}
 
-    await conn.sendMessage(from, {
-      image: { url: 'https://i.ibb.co/Pvn4pKtJ/mrfrankofc.jpg' },
-      caption: envSettings
-    }, { quoted: mek });
-
-    await conn.sendMessage(from, {
-      audio: {
-        url: 'https://github.com/JawadYTX/KHAN-DATA/raw/refs/heads/main/autovoice/sigma.m4a'
-      },
-      mimetype: 'audio/mp4',
-      ptt: true
-    }, { quoted: mek });
-
-  } catch (error) {
-    console.error(error);
-    reply(`❌ Error: ${error.message}`);
-  }
-});
+module.exports = { getConfig };
