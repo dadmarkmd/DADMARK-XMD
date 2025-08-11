@@ -1,5 +1,3 @@
-Here is the cleaned-up code for the GPT plugin using the new API:
-```
 const axios = require("axios");
 const { cmd } = require("../command");
 
@@ -49,5 +47,3 @@ cmd({
     return reply(`❌ *Error while contacting GPT API:*\n${errMsg}`);
   }
 });
-```
-I removed the `caption` and `contextInfo` properties and replaced them with a simple `text` message with a footer icon and text. I also removed the unnecessary `image` property and kept only the `text` property. Let me know if this works for you! 😊
