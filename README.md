@@ -1,74 +1,4 @@
-<p align="center">
-  <img src="https://files.catbox.moe/w4cxbd.jpg" alt="DADMARK Banner" width="800"/>
-</p>
-
-<p align="center">
-  <a href="https://github.com/dadmarkmd/DADMARK-XMD">
-    <img src="https://svg.demolab.com?font=Black+Ops+One&size=50&pause=1000&color=DAA520&center=true&width=910&height=100&lines=DADMARK XMD +MAKE; ⭐ STAR & FORK + BY DADMARK XMD" alt="Typing SVG" />
-  </a>
-</p>
-
-<!-- GitHub Buttons -->
-<p align="center">
-  <a href="https://github.com/dadmarkmd/DADMARK-XMD/stargazers">
-    <img src="https://img.shields.io/github/stars/dadmarkmd/DADMARK-XMD?style=social" alt="Star the Repo" />
-  </a>
-  &nbsp;
-  <a href="https://github.com/dadmarkmd/DADMARK-XMD/fork">
-    <img src="https://img.shields.io/github/forks/dadmarkmd/DADMARK-XMD?style=social" alt="Fork the Repo" />
-  </a>
-  &nbsp;
-  <a href="https://github.com/dadmarkmd/DADMARK-XMD/issues">
-    <img src="https://img.shields.io/github/issues/dadmarkmd/DADMARK-XMD?color=orange&style=flat-square" alt="Issues" />
-  </a>
-  &nbsp;
-  <a href="https://github.com/dadmarkmd/DADMARK-XMD/graphs/contributors">
-    <img src="https://img.shields.io/github/contributors/dadmarkmd/DADMARK-XMD?color=blueviolet&style=flat-square" alt="Contributors" />
-  </a>
-</p>
-
-<!-- 1. Live Session -->
-<p align="center">
-  <a href="https://dadmark-xmd-v1-z9s7.onrender.com/">
-    <img src="https://img.shields.io/badge/LIVE_SESSION-RUNNING-blueviolet?style=for-the-badge&logo=render" alt="Live Session Badge" />
-  </a>
-</p>
-
-<!-- 2. Heroku Deployment -->
-<p align="center">
-  <a href="https://heroku.com/deploy?template=https://github.com/dadmarkmd/DADMARK-XMD">
-    <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku" />
-  </a>
-</p>
-
-<!-- 3. Render Deployment -->
-<p align="center">
-  <a href="https://render.com/">
-    <img src="https://img.shields.io/badge/RENDER_DEPLOY-CLICK_HERE-purple?style=for-the-badge&logo=render" alt="Render Deploy" />
-  </a>
-</p>
-
-<!-- 4. WhatsApp Contact -->
-<p align="center">
-  <a href="https://wa.me/254714342128">
-    <img src="https://img.shields.io/badge/CONTACT_DADMARK-ON_WHATSAPP-25D366?style=for-the-badge&logo=whatsapp" alt="Contact Dadmark on WhatsApp" />
-  </a>
-</p>
-
-<!-- 5. ZIP Download -->
-<p align="center">
-  <a href="https://github.com/dadmarkmd/DADMARK-XMD/archive/refs/heads/main.zip">
-    <img src="https://img.shields.io/badge/DOWNLOAD-DADMARK_XMD.ZIP-brightgreen?style=for-the-badge&logo=github" alt="Download ZIP" />
-  </a>
-</p>
-
----
-
-🚀 **DADMARK XMD** - WhatsApp Multi-Device Bot
-
-DADMARK XMD is a powerful multi-device WhatsApp bot built to automate tasks, deliver features, and engage in real-time communication using the WhatsApp Web API.
-
-> 🔗 **Live Session**  
+🔗 **Live Session**: [Click Here](https://six391-wkgc.onrender.com/)  
 > 📦 **GitHub Repo**: [DADMARK-XMD](https://github.com/dadmarkmd/DADMARK-XMD)
 
 ---
@@ -142,9 +72,7 @@ docker run -it dadmark-xmd
 Big thanks to everyone involved:
 
 @dadmarkmd – Project lead, core developer, and maintainer
-
 @caseyrhodes – Contributor and support
-
 
 
 ---
