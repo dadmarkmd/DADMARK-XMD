@@ -62,23 +62,54 @@ const {
   // Clear the temp directory every 5 minute
   setInterval(clearTempDir, 5 * 60 * 1000);
   
-  //===================SESSION-AUTH============================
-if (!fs.existsSync(__dirname + '/sessions/creds.json')) {
-if(!config.SESSION_ID) return console.log('Please add your session to SESSION_ID env !!')
-const sessdata = config.SESSION_ID.replace("IK", '');
-const filer = File.fromURL(`https://mega.nz/file/${sessdata}`)
-filer.download((err, data) => {
-if(err) throw err
-fs.writeFile(__dirname + '/sessions/creds.json', data, () => {
-console.log("Session downloaded ✅")
-})})}
-  
-  const express = require("express");
-  const app = express();
-  const port = process.env.PORT || 9090;
-  
-  //=============================================
-  
+  //===//===================SESSION-AUTH============================
+import https from "https";
+import { File } from "megajs";
+import fs from "fs";
+import config from "./config.js";
+
+const sessionPath = __dirname + '/sessions/creds.json';
+
+// Only download if session file doesn’t exist
+if (!fs.existsSync(sessionPath)) {
+  if (!config.SESSION_ID) {
+    console.log("❌ Please add your SESSION_ID to env first!");
+    process.exit(1);
+  }
+
+  const sessID = config.SESSION_ID.trim();
+
+  // Check if it's a Mega link
+  if (sessID.includes("mega.nz")) {
+    console.log("📦 Downloading session from MEGA...");
+    try {
+      const file = File.fromURL(sessID); // must be full link with #key
+      file.download((err, data) => {
+        if (err) throw err;
+        fs.writeFileSync(sessionPath, data);
+        console.log("✅ Session downloaded successfully (MEGA)");
+      });
+    } catch (e) {
+      console.error("❌ MEGA download failed:", e.message);
+      process.exit(1);
+    }
+
+  } else {
+    // Handle normal direct download URL
+    console.log("🌐 Downloading session from direct URL...");
+    https.get(sessID, res => {
+      let data = "";
+      res.on("data", chunk => data += chunk);
+      res.on("end", () => {
+        fs.writeFileSync(sessionPath, data);
+        console.log("✅ Session downloaded successfully (Direct URL)");
+      });
+    }).on("error", err => {
+      console.error("❌ Direct download failed:", err.message);
+      process.exit(1);
+    });
+  }
+}
   async function connectToWA() {
   console.log("Connecting DADMARK XMD to WhatsApp ⏳️...");
   const { state, saveCreds } = await useMultiFileAuthState(__dirname + '/sessions/')
