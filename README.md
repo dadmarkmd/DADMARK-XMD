@@ -1,4 +1,4 @@
-🔗 **Live Session**: [Click Here](https://six391-wkgc.onrender.com/)  
+> 🔗 **Live Session**  
 > 📦 **GitHub Repo**: [DADMARK-XMD](https://github.com/dadmarkmd/DADMARK-XMD)
 
 ---
@@ -72,7 +72,9 @@ docker run -it dadmark-xmd
 Big thanks to everyone involved:
 
 @dadmarkmd – Project lead, core developer, and maintainer
+
 @caseyrhodes – Contributor and support
+
 
 
 ---
